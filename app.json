@@ -1,0 +1,301 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.micronova.aguaiot",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "brandColor": "#FF6B35",
+  "name": {
+    "en": "Micronova Agua IOT",
+    "nl": "Micronova Agua IOT"
+  },
+  "description": {
+    "en": "Control your pellet stove connected via Micronova Agua IOT",
+    "nl": "Bestuur je pelletkachel verbonden via Micronova Agua IOT"
+  },
+  "category": [
+    "climate"
+  ],
+  "tags": {
+    "en": [
+      "pellet stove",
+      "heating",
+      "thermostat",
+      "micronova",
+      "agua iot"
+    ],
+    "nl": [
+      "pelletkachel",
+      "verwarming",
+      "thermostaat",
+      "micronova",
+      "agua iot"
+    ]
+  },
+  "permissions": [],
+  "author": {
+    "name": "Gerrit Scherpenzeel"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Based on py-agua-iot by Frederic Van Linthoudt and Vincent Wolsink"
+      }
+    ]
+  },
+  "support": "https://github.com/community/homey-micronova-agua-iot/issues",
+  "homepage": "https://github.com/community/homey-micronova-agua-iot",
+  "flow": {
+    "triggers": [
+      {
+        "id": "pellet_stove_alarm",
+        "title": {
+          "en": "Stove alarm triggered",
+          "nl": "Kachelalarm geactiveerd"
+        },
+        "titleFormatted": {
+          "en": "Stove alarm triggered",
+          "nl": "Kachelalarm geactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when the pellet stove has an alarm",
+          "nl": "Geactiveerd wanneer de pelletkachel een alarm heeft"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pellet-stove"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "alarm_code",
+            "type": "number",
+            "title": {
+              "en": "Alarm code",
+              "nl": "Alarmcode"
+            },
+            "example": 1
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "pellet_stove_set_power",
+        "title": {
+          "en": "Set power level",
+          "nl": "Stel vermogensniveau in"
+        },
+        "titleFormatted": {
+          "en": "Set power level to [[power_level]]",
+          "nl": "Stel vermogensniveau in op [[power_level]]"
+        },
+        "hint": {
+          "en": "Set the power level of the pellet stove (1-5)",
+          "nl": "Stel het vermogensniveau van de pelletkachel in (1-5)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pellet-stove"
+          },
+          {
+            "type": "range",
+            "name": "power_level",
+            "title": {
+              "en": "Power level",
+              "nl": "Vermogensniveau"
+            },
+            "min": 1,
+            "max": 5,
+            "step": 1
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Pellet Stove",
+        "nl": "Pelletkachel"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "measure_temperature.fumes",
+        "dim",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 40,
+          "step": 0.5
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Room temperature",
+            "nl": "Kamertemperatuur"
+          }
+        },
+        "measure_temperature.fumes": {
+          "title": {
+            "en": "Fumes temperature",
+            "nl": "Rookgastemperatuur"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Power level",
+            "nl": "Vermogensniveau"
+          },
+          "min": 0,
+          "max": 1,
+          "step": 0.2
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Stove alarm",
+            "nl": "Kachel alarm"
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 100,
+          "usageOff": 5
+        }
+      },
+      "ui": {
+        "components": [
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature"
+            ]
+          },
+          {
+            "id": "thermostat",
+            "capabilities": [
+              "target_temperature"
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "login",
+          "template": "login_credentials",
+          "options": {
+            "logo": "/assets/icon.svg",
+            "title": {
+              "en": "Log in",
+              "nl": "Inloggen"
+            },
+            "usernameLabel": {
+              "en": "Email address",
+              "nl": "E-mailadres"
+            },
+            "usernamePlaceholder": {
+              "en": "john@example.com",
+              "nl": "jan@voorbeeld.nl"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Account settings",
+            "nl": "Accountinstellingen"
+          },
+          "children": [
+            {
+              "id": "brand",
+              "type": "label",
+              "label": {
+                "en": "Brand",
+                "nl": "Merk"
+              },
+              "value": ""
+            },
+            {
+              "id": "email",
+              "type": "label",
+              "label": {
+                "en": "Email",
+                "nl": "E-mail"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Polling settings",
+            "nl": "Polling instellingen"
+          },
+          "children": [
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval (seconds)",
+                "nl": "Poll interval (seconden)"
+              },
+              "hint": {
+                "en": "How often to update device status (minimum 30 seconds)",
+                "nl": "Hoe vaak de apparaatstatus bijgewerkt moet worden (minimaal 30 seconden)"
+              },
+              "value": 60,
+              "min": 30,
+              "max": 300
+            }
+          ]
+        }
+      ],
+      "id": "pellet-stove"
+    }
+  ]
+}

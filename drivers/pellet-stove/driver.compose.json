@@ -1,0 +1,165 @@
+{
+  "name": {
+    "en": "Pellet Stove",
+    "nl": "Pelletkachel"
+  },
+  "platforms": ["local", "cloud"],
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "measure_temperature.fumes",
+    "dim",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 40,
+      "step": 0.5
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Room temperature",
+        "nl": "Kamertemperatuur"
+      }
+    },
+    "measure_temperature.fumes": {
+      "title": {
+        "en": "Fumes temperature",
+        "nl": "Rookgastemperatuur"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Power level",
+        "nl": "Vermogensniveau"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.2
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Stove alarm",
+        "nl": "Kachel alarm"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 100,
+      "usageOff": 5
+    }
+  },
+  "ui": {
+    "components": [
+      {
+        "id": "toggle",
+        "capabilities": ["onoff"]
+      },
+      {
+        "id": "sensor",
+        "capabilities": ["measure_temperature"]
+      },
+      {
+        "id": "thermostat",
+        "capabilities": ["target_temperature"]
+      }
+    ]
+  },
+  "pair": [
+    {
+      "id": "login",
+      "template": "login_credentials",
+      "options": {
+        "logo": "/assets/icon.svg",
+        "title": {
+          "en": "Log in",
+          "nl": "Inloggen"
+        },
+        "usernameLabel": {
+          "en": "Email address",
+          "nl": "E-mailadres"
+        },
+        "usernamePlaceholder": {
+          "en": "john@example.com",
+          "nl": "jan@voorbeeld.nl"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "nl": "Wachtwoord"
+        },
+        "passwordPlaceholder": {
+          "en": "Password",
+          "nl": "Wachtwoord"
+        }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Account settings",
+        "nl": "Accountinstellingen"
+      },
+      "children": [
+        {
+          "id": "brand",
+          "type": "label",
+          "label": {
+            "en": "Brand",
+            "nl": "Merk"
+          },
+          "value": ""
+        },
+        {
+          "id": "email",
+          "type": "label",
+          "label": {
+            "en": "Email",
+            "nl": "E-mail"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Polling settings",
+        "nl": "Polling instellingen"
+      },
+      "children": [
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Poll interval (seconds)",
+            "nl": "Poll interval (seconden)"
+          },
+          "hint": {
+            "en": "How often to update device status (minimum 30 seconds)",
+            "nl": "Hoe vaak de apparaatstatus bijgewerkt moet worden (minimaal 30 seconden)"
+          },
+          "value": 60,
+          "min": 30,
+          "max": 300
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "com.micronova.aguaiot",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": ["local", "cloud"],
+  "brandColor": "#FF6B35",
+  "name": {
+    "en": "Jolly-Mec Micronova Agua IOT",
+    "nl": "Jolly-Mec Micronova Agua IOT"
+  },
+  "description": {
+    "en": "Control your Jolly-Mec pellet stove connected via Micronova Agua IOT",
+    "nl": "Bestuur je Jolly-Mec pelletkachel verbonden via Micronova Agua IOT"
+  },
+  "category": ["climate"],
+  "tags": {
+    "en": ["pellet stove", "heating", "thermostat", "micronova", "agua iot", "jolly mec"],
+    "nl": ["pelletkachel", "verwarming", "thermostaat", "micronova", "agua iot, "jolly mec"]
+  },
+  "permissions": [],
+  "author": {
+    "name": "Gerrit Scherpenzeel"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Based on py-agua-iot by Frederic Van Linthoudt and Vincent Wolsink"
+      }
+    ]
+  },
+  "support": "https://github.com/gzeel/homey-jollymec-stove/issues",
+  "homepage": "https://github.com/gzeel/homey-jollymec-stove"
+}

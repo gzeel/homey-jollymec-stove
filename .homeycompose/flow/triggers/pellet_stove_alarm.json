@@ -1,0 +1,33 @@
+{
+  "id": "pellet_stove_alarm",
+  "title": {
+    "en": "Stove alarm triggered",
+    "nl": "Kachelalarm geactiveerd"
+  },
+  "titleFormatted": {
+    "en": "Stove alarm triggered",
+    "nl": "Kachelalarm geactiveerd"
+  },
+  "hint": {
+    "en": "Triggered when the pellet stove has an alarm",
+    "nl": "Geactiveerd wanneer de pelletkachel een alarm heeft"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=pellet-stove"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "alarm_code",
+      "type": "number",
+      "title": {
+        "en": "Alarm code",
+        "nl": "Alarmcode"
+      },
+      "example": 1
+    }
+  ]
+}

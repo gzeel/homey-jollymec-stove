@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "select_brand": "Selecteer je kachelmerk",
+    "error": {
+      "no_brand": "Selecteer eerst een merk",
+      "login_failed": "Inloggen mislukt",
+      "no_devices": "Geen apparaten gevonden in je account"
+    }
+  },
+  "device": {
+    "unavailable": {
+      "connection_error": "Verbindingsfout",
+      "auth_error": "Authenticatiefout"
+    },
+    "error": {
+      "command_failed": "Kon commando niet naar kachel sturen"
+    }
+  },
+  "settings": {
+    "brand": "Merk",
+    "email": "E-mail",
+    "poll_interval": "Poll interval (seconden)"
+  }
+}

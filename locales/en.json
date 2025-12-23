@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "select_brand": "Select your stove brand",
+    "error": {
+      "no_brand": "Please select a brand first",
+      "login_failed": "Login failed",
+      "no_devices": "No devices found in your account"
+    }
+  },
+  "device": {
+    "unavailable": {
+      "connection_error": "Connection error",
+      "auth_error": "Authentication error"
+    },
+    "error": {
+      "command_failed": "Failed to send command to stove"
+    }
+  },
+  "settings": {
+    "brand": "Brand",
+    "email": "Email",
+    "poll_interval": "Poll interval (seconds)"
+  }
+}

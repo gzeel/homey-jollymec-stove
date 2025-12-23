@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
+    </linearGradient>
+  </defs>
+  <!-- Stove body -->
+  <rect x="15" y="30" width="70" height="60" rx="5" fill="#333"/>
+  <rect x="20" y="35" width="60" height="35" rx="3" fill="#1a1a1a"/>
+  <!-- Flame -->
+  <path d="M50 60 Q35 45 40 35 Q45 45 50 40 Q55 45 60 35 Q65 45 50 60" fill="url(#flameGrad)"/>
+  <!-- Control panel -->
+  <rect x="25" y="75" width="50" height="10" rx="2" fill="#444"/>
+  <circle cx="35" cy="80" r="3" fill="#FF6B35"/>
+  <circle cx="50" cy="80" r="3" fill="#666"/>
+  <circle cx="65" cy="80" r="3" fill="#666"/>
+  <!-- Pellet indicator -->
+  <rect x="75" y="40" width="8" height="20" rx="2" fill="#8B4513"/>
+</svg>

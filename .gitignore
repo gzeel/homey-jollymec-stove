@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Homey build artifacts
+build/
+*.homeyapp
+
+# Environment variables (contains secrets)
+env.json
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
+
+
+# Added by Homey CLI
+/.homeybuild/

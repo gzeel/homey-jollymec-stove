@@ -1,0 +1,33 @@
+{
+  "id": "pellet_stove_set_power",
+  "title": {
+    "en": "Set power level",
+    "nl": "Stel vermogensniveau in"
+  },
+  "titleFormatted": {
+    "en": "Set power level to [[power_level]]",
+    "nl": "Stel vermogensniveau in op [[power_level]]"
+  },
+  "hint": {
+    "en": "Set the power level of the pellet stove (1-5)",
+    "nl": "Stel het vermogensniveau van de pelletkachel in (1-5)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=pellet-stove"
+    },
+    {
+      "type": "range",
+      "name": "power_level",
+      "title": {
+        "en": "Power level",
+        "nl": "Vermogensniveau"
+      },
+      "min": 1,
+      "max": 5,
+      "step": 1
+    }
+  ]
+}

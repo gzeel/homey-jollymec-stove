@@ -1,0 +1,31 @@
+{
+  "name": "com.micronova.aguaiot",
+  "version": "1.0.0",
+  "description": "Control your Jolly-mec pellet stove connected via Micronova Agua IOT",
+  "main": "app.js",
+  "scripts": {
+    "build": "homey app build",
+    "run": "homey app run",
+    "install": "homey app install",
+    "publish": "homey app publish",
+    "validate": "homey app validate"
+  },
+  "keywords": [
+    "homey",
+    "jolly-mec",
+    "pellet-stove",
+    "micronova",
+    "agua-iot",
+    "heating"
+  ],
+  "author": "Community Developer",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "homey": "^3.10.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
