@@ -15,8 +15,22 @@
   },
   "category": ["climate"],
   "tags": {
-    "en": ["pellet stove", "heating", "thermostat", "micronova", "agua iot", "jolly mec"],
-    "nl": ["pelletkachel", "verwarming", "thermostaat", "micronova", "agua iot, "jolly mec"]
+    "en": [
+      "pellet stove",
+      "heating",
+      "thermostat",
+      "micronova",
+      "agua iot",
+      "jolly mec"
+    ],
+    "nl": [
+      "pelletkachel",
+      "verwarming",
+      "thermostaat",
+      "micronova",
+      "agua iot",
+      "jolly mec"
+    ]
   },
   "permissions": [],
   "author": {
